@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">PelotonBook</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+</head>
+<body>
+
+
+<nav th:fragment="rider-navigation">
+    <a href="/rider">Home</a> |
+    <a href="/rider/add">Add a Rider</a>
+</nav>
+
+
+
+<nav th:fragment="user-navigation">
+    <a href="/user">Home</a> |
+    <a href="/user/add">Add a User</a>
+</nav>
+
+
+</body>
+</html>

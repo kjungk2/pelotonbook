@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/html">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: user-navigation"></nav>
+
+<ul th:each="user : ${users}">
+    <li><a th:href="'/user/view/' + ${user.id}" th:text="${user.username}"></a></li>
+</ul>
+
+<form method="post" style="max-width:600px;" th:object="${form}">
+    <div class="form-group">
+        <label th:for="riders">Cyclists</label>
+        <select name="riderId">
+            <option th:each="rider : *{riders}"
+                    th:text="${rider.name}"
+                    th:value="${rider.id}"></option>
+        </select>
+        <span th:errors="*{riderId}" class="error"></span>
+
+        <input type="hidden" name="userId" th:value="*{user.id}" />
+
+    </div>
+
+    <input type="submit" value="Add Rider to follow" />
+</form>
+
+
+
+</body>
+</html>

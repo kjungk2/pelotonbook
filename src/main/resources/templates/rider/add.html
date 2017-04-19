@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: rider-navigation"></nav>
+
+<form method="post" style="max-width:600px;" th:object="${rider}">
+    <div>
+        <label th:for="name">Rider's Name</label>
+        <input th:field="*{name}" />
+        <span th:errors="*{name}" class="error"></span>
+    </div>
+
+    <div>
+        <label th:for="team">Rider's Team</label>
+        <input th:field="*{team}" />
+        <span th:errors="*{team}"></span>
+    </div>
+
+    <div>
+        <label th:for="pcsLink">PCS Link</label>
+        <input th:field="*{pcsLink}" />
+        <span th:errors="*{pcsLink}"></span>
+    </div>
+
+    <input type="submit" value="Add Rider" />
+
+</form>
+
+
+</body>
+</html>
