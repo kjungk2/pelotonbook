@@ -1,5 +1,6 @@
 package com.pelotonbook.models;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -37,6 +38,8 @@ public class Rider {
 
     public Rider() { }
 
+
+    // getters and setters
     public int getId() {
         return id;
     }

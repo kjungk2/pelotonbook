@@ -28,9 +28,19 @@
     </div>
 
     <input type="submit" value="Add Rider" />
-
 </form>
 
+
+
+<form method="post" style="max-width:600px;" th:object="${rider}">
+    <div>
+        <label th:for="pcsLink">PCS Link</label>
+        <input th:field="*{pcsLink}" />
+        <span th:errors="*{pcsLink}"></span>
+    </div>
+
+    <input type="submit" value="Scrape PCS Link!" />
+</form>
 
 </body>
 </html>

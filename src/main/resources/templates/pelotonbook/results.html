@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/html">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: user-navigation"></nav>
+
+<h3 th:text="${raceday}">No Title Passed</h3>
+<a th:href="'http://www.procyclingstats.com/race/' + ${raceday}">ProCyclingStats Page</a>
+
+
+<table class="table">
+
+    <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Team</th>
+        <th>Time</th>
+    </tr>
+
+    <tr th:each="rider : ${fullResults}">
+        <td th:text="${rider.rank}"></td>
+        <th><a th:href="'http://www.procyclingstats.com/rider/' + ${rider.name}" th:text="${rider.name}"></a></th>
+        <td th:text="${rider.country}"></td>
+        <td th:text="${rider.team}"></td>
+        <td th:text="${rider.pcsTime}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
